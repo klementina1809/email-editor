@@ -30,19 +30,21 @@ export function EmailEditor() {
 		setText(text.replace(selectedText, `<u>${selectedText}</u>`));
 	};
 
+	
+
 	return (
 		<div>
 			<h1>Email editor</h1>
 			<div className={styles.card}>
-				<div className="prevue">{parse(text)}</div>
+				<div className={styles.prevue}>{parse(text)}</div>
 				<div
 					contentEditable
 					ref={editorRef}
 					className={styles.editor}
 					onKeyUp={handleSelectionChange}
 					onMouseUp={handleSelectionChange}
-					onChange={(e) => setText(e.currentTarget.value)}
-					value={text}
+					onInput={(e) => setText(e.currentTarget.innerText)}
+					suppressContentEditableWarning={true}
 				>
 					{text}
 				</div>
