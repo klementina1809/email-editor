@@ -1,7 +1,9 @@
+import { useState } from "react";
 import { EmailEditor } from "./components/email-editor/EmailEditor";
 import EmailList from "./components/email-list/EmailList";
 
 function Home() {
+	const [emailsList, setEmailsList] = useState([]);
 	return (
 		<div
 			style={{
@@ -10,8 +12,8 @@ function Home() {
 				padding: "1.5rem",
 			}}
 		>
-			<EmailEditor />
-			<EmailList />
+			<EmailEditor setEmailsList={setEmailsList}/>
+			<EmailList emailsList={emailsList}/>
 		</div>
 	);
 }

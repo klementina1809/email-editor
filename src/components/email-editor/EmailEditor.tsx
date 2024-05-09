@@ -3,7 +3,7 @@ import styles from "./EmailEditor.module.scss";
 import parse from "html-react-parser";
 import { useState, useRef } from "react";
 
-export function EmailEditor() {
+export function EmailEditor({ setEmailsList }) {
 	const [text, setText] = useState(
 		`Hey Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus beatae et quibusdam dolorum voluptas commodi, veritatis voluptate similique vero dignissimos laboriosam eos excepturi, reiciendis ipsum aperiam inventore provident mollitia modi?`
 	);
@@ -18,6 +18,11 @@ export function EmailEditor() {
 		}
 	};
 
+	const handleSend = () => {
+		setEmailsList((prev) => [...prev, text]);
+		setText("");
+	};
+
 	const applyBold = () => {
 		setText(text.replace(selectedText, `<strong>${selectedText}</strong>`));
 	};
@@ -29,8 +34,6 @@ export function EmailEditor() {
 	const applyUnderline = () => {
 		setText(text.replace(selectedText, `<u>${selectedText}</u>`));
 	};
-
-	
 
 	return (
 		<div>
@@ -63,7 +66,7 @@ export function EmailEditor() {
 							<Eraser size={18} onClick={() => setText("")} />
 						</button>
 					</div>
-					<button>Send now</button>
+					<button onClick={handleSend}>Send now</button>
 				</div>
 			</div>
 		</div>
