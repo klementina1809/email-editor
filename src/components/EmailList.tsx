@@ -1,9 +1,7 @@
-import styles from "./EmailList.module.scss";
+import styles from "../styles/EmailList.module.scss";
 import parse from "html-react-parser";
 
-
-function EmailList({emailsList}) {
-
+function EmailList({ emailsList }) {
 	return (
 		<div className={styles.list}>
 			{emailsList.map((email) => (

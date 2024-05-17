@@ -1,7 +1,7 @@
-import { Eraser, Bold, Italic, Underline } from "lucide-react";
-import styles from "./EmailEditor.module.scss";
-import parse from "html-react-parser";
 import { useState, useRef } from "react";
+import { Eraser, Bold, Italic, Underline } from "lucide-react";
+import styles from "../styles/EmailEditor.module.scss";
+import parse from "html-react-parser";
 
 export function EmailEditor({ setEmailsList }) {
 	const [text, setText] = useState(

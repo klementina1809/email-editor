@@ -1,12 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap');
+@import 'variables';
+
 .card {
-	background-color: rgba(0, 0, 0, 0.4);
+	background-color: $primary-color;
 	border-radius: 10px;
 	overflow: hidden;
-	box-shadow: 0 3px 6px rgba(0, 0, 0, 0.275);
+	box-shadow: 0 3px 6px $shadow-color;
 
 	.prevue {
-		background-color: rgba(255, 255, 255, 0.085);
+		background-color: $secondary-color;
 		padding: 1.5rem;
 	}
 	.editor {
@@ -20,7 +22,7 @@
 	}
 
 	.actions {
-		background-color: rgba(255, 255, 255, 0.085);
+		background-color: $secondary-color;
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
@@ -47,7 +49,7 @@
 			font-size: 1em;
 			font-weight: 500;
 			font-family: inherit;
-			background-color: #1a1a1a;
+			background-color: $secondary-color;
 			cursor: pointer;
 			transition: border-color 0.3s ease-in-out;
 			&:hover {
