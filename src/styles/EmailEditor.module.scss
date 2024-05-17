@@ -1,5 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap');
-@import 'variables';
+@import url("https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap");
+@import "variables";
 
 .card {
 	background-color: $primary-color;
@@ -11,6 +11,14 @@
 		background-color: $secondary-color;
 		padding: 1.5rem;
 	}
+	textarea {
+		background-color: transparent;
+		border: none;
+		&:focus-visible {
+			outline: 1px solid #959aff;
+		}
+	}
+
 	.editor {
 		font-family: "Source Code Pro", monospace;
 		font-size: 16px;
