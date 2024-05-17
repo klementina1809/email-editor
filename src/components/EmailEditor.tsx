@@ -8,13 +8,12 @@ export function EmailEditor({ setEmailsList }) {
 		`Hey Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus beatae et quibusdam dolorum voluptas commodi, veritatis voluptate similique vero dignissimos laboriosam eos excepturi, reiciendis ipsum aperiam inventore provident mollitia modi?`
 	);
 	const [selectedText, setSelectedText] = useState("");
-	const editorRef = useRef(null);
 
 	const handleSelectionChange = () => {
 		const selection = window.getSelection();
 		if (selection) {
-			const selectedText = selection.toString();
-			setSelectedText(selectedText);
+			const newSelectedText = selection.toString();
+			setSelectedText(newSelectedText);
 		}
 	};
 
@@ -40,17 +39,14 @@ export function EmailEditor({ setEmailsList }) {
 			<h1>Email editor</h1>
 			<div className={styles.card}>
 				<div className={styles.prevue}>{parse(text)}</div>
-				<div
-					contentEditable
-					ref={editorRef}
+				<textarea
 					className={styles.editor}
-					onKeyUp={handleSelectionChange}
+					value={text}
 					onMouseUp={handleSelectionChange}
-					onInput={(e) => setText(e.currentTarget.innerText)}
-					suppressContentEditableWarning={true}
+					onChange={(e) => setText(e.target.value)}
 				>
 					{text}
-				</div>
+				</textarea>
 				<div className={styles.actions}>
 					<div className={styles.tools}>
 						<button onClick={applyBold}>
