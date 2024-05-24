@@ -5,7 +5,7 @@ import parse from "html-react-parser";
 
 export function EmailEditor({ setEmailsList }: any) {
 	const [text, setText] = useState(
-		`Hey Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus beatae et quibusdam dolorum voluptas commodi, veritatis voluptate similique vero dignissimos laboriosam eos excepturi, reiciendis ipsum aperiam inventore provident mollitia modi?`
+		` Salve, mi chiamo Albina Khomenko. Sono una sviluppatrice web junior specializzata nel front-end, con un particolare focus su React. Al momento ho una solida conoscenza di HTML, CSS e JavaScript, ho esperienza pratica nella creazione di moderne applicazioni web e nell'implementare componenti riutilizzabili. So utilizzare Git per lo sviluppo collaborativo e controllo di versione, oltre a gestire varie librerie tramite npm. Negli ultimi 3 mesi ho sviluppato 15 progetti utilizzando React, i quali sono visualizzabili nel mio portfolio. Tra i progetti che ho sviluppato ci sono sia applicazioni a pagina singola (SPA) che multipage (create usando librerie di routing).`
 	);
 	const [selectedText, setSelectedText] = useState("");
 
@@ -18,7 +18,7 @@ export function EmailEditor({ setEmailsList }: any) {
 	};
 
 	const handleSend = () => {
-		setEmailsList((prev:any) => [...prev, text]);
+		setEmailsList((prev: any) => [...prev, text]);
 		setText("");
 	};
 
@@ -44,8 +44,7 @@ export function EmailEditor({ setEmailsList }: any) {
 					value={text}
 					onMouseUp={handleSelectionChange}
 					onChange={(e) => setText(e.target.value)}
-				>
-				</textarea>
+				></textarea>
 				<div className={styles.actions}>
 					<div className={styles.tools}>
 						<button onClick={applyBold}>
