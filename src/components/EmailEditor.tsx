@@ -3,7 +3,7 @@ import { Eraser, Bold, Italic, Underline } from "lucide-react";
 import styles from "../styles/EmailEditor.module.scss";
 import parse from "html-react-parser";
 
-export function EmailEditor({ setEmailsList }) {
+export function EmailEditor({ setEmailsList }: any) {
 	const [text, setText] = useState(
 		`Hey Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus beatae et quibusdam dolorum voluptas commodi, veritatis voluptate similique vero dignissimos laboriosam eos excepturi, reiciendis ipsum aperiam inventore provident mollitia modi?`
 	);
@@ -18,7 +18,7 @@ export function EmailEditor({ setEmailsList }) {
 	};
 
 	const handleSend = () => {
-		setEmailsList((prev) => [...prev, text]);
+		setEmailsList((prev:any) => [...prev, text]);
 		setText("");
 	};
 
@@ -45,7 +45,6 @@ export function EmailEditor({ setEmailsList }) {
 					onMouseUp={handleSelectionChange}
 					onChange={(e) => setText(e.target.value)}
 				>
-					{text}
 				</textarea>
 				<div className={styles.actions}>
 					<div className={styles.tools}>
