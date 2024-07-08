@@ -1,9 +1,13 @@
-import { useState, useRef } from "react";
+import { useState, FC } from "react";
 import { Eraser, Bold, Italic, Underline } from "lucide-react";
 import styles from "../styles/EmailEditor.module.scss";
 import parse from "html-react-parser";
 
-export function EmailEditor({ setEmailsList }: any) {
+type EmailEditorProps = {
+	setEmailsList: React.Dispatch<React.SetStateAction<string[]>>;
+};
+
+export const EmailEditor: FC<EmailEditorProps> = ({ setEmailsList }) => {
 	const [text, setText] = useState(
 		` Salve, mi chiamo Albina Khomenko. Sono una sviluppatrice web junior specializzata nel front-end, con un particolare focus su React. Al momento ho una solida conoscenza di HTML, CSS e JavaScript, ho esperienza pratica nella creazione di moderne applicazioni web e nell'implementare componenti riutilizzabili. So utilizzare Git per lo sviluppo collaborativo e controllo di versione, oltre a gestire varie librerie tramite npm. Negli ultimi 3 mesi ho sviluppato 15 progetti utilizzando React, i quali sono visualizzabili nel mio portfolio. Tra i progetti che ho sviluppato ci sono sia applicazioni a pagina singola (SPA) che multipage (create usando librerie di routing).`
 	);
@@ -18,7 +22,7 @@ export function EmailEditor({ setEmailsList }: any) {
 	};
 
 	const handleSend = () => {
-		setEmailsList((prev: any) => [...prev, text]);
+		setEmailsList((prev: string[]) => [...prev, text]);
 		setText("");
 	};
 
@@ -65,4 +69,4 @@ export function EmailEditor({ setEmailsList }: any) {
 			</div>
 		</div>
 	);
-}
+};

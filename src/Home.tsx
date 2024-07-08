@@ -3,7 +3,7 @@ import { EmailEditor } from "./components/EmailEditor.tsx";
 import EmailList from "./components/EmailList.tsx";
 
 function Home() {
-	const [emailsList, setEmailsList] = useState([]);
+	const [emailsList, setEmailsList] = useState<string[]>([]);
 	return (
 		<div
 			style={{
